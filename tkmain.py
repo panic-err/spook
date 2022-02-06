@@ -18,10 +18,11 @@ def playsoundWidget():
     filePath = "/home/pi/Music/"+files[selected]
     
     subprocess.run(["sudo", "aplay", filePath])
+toPlay = datetime.datetime.now().minute
 while True:
-    if datetime.datetime.now().minute == 15:
+    if datetime.datetime.now().minute != toPlay:
         playsoundWidget()
-        time.sleep(60)
+        toPlay = datetime.datetime.now().minute
 
 """
 root = Tk()
