@@ -1,0 +1,9 @@
+[Unit]
+Description=Deer spooking as a service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/pi/spook/service.sh
+
+[Install]
+WantedBy=multi-user.target
