@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 import playsound
+from random import randrange
 
 from os import listdir
 from os.path import isfile, join
@@ -8,7 +9,9 @@ from os.path import isfile, join
 
 def playsoundWidget():
     files = [f for f in listdir("sounds") if isfile(join("sounds/", f))]
-    playsound.playsound("sounds/"+files[0])
+    selected = randrange(len(files))
+    print("Playing " + files[selected])
+    playsound.playsound("sounds/"+files[selected])
 
 root = Tk()
 root.title("Spook 1.0")
