@@ -8,10 +8,10 @@ from os.path import isfile, join
 
 
 def playsoundWidget():
-    files = [f for f in listdir("/home/pi/Music") if isfile(join("/home/pi/Music", f))]
+    files = [f for f in listdir("/home/pi/Music") if isfile(join("/home/pi/Music/", f))]
     selected = randrange(len(files))
     print("Playing " + files[selected])
-    filePath = "/home/pi/Music"+files[selected]
+    filePath = "/home/pi/Music/"+files[selected]
     
     subprocess.run(["sudo", "aplay", filePath])
 
